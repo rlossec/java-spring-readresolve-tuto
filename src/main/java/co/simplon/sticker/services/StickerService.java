@@ -16,8 +16,8 @@ public class StickerService {
 	}
 	
 	public StickerView get(Long id) {
-		Sticker sticker = repository.findById(id).orElseThrow();
-		return new StickerView(sticker.getName());
+		StickerView sticker = repository.findProjectedById(id).orElseThrow();
+		return sticker;
 	}
 	
 }
