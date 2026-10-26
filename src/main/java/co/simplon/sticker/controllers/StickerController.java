@@ -39,8 +39,7 @@ public class StickerController {
 	@PostMapping
 	@ResponseStatus(code=HttpStatus.CREATED)
 	public StickerView post(@RequestBody @Valid StickerEdit inputs) {
-		// 
-		return new StickerView(inputs.name());
+		return service.post(inputs);
 	}
 	
 	@PutMapping("/{id}")
